@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepika Makeup Studio — Beauty Beyond Expectations</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* ===== home hero ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 32px 90px;
+    color: var(--cream);
+    background:
+      radial-gradient(85% 120% at 18% 0%, #6B1830 0%, var(--burgundy-deep) 52%, var(--burgundy-ink) 100%);
+    overflow: hidden;
+  }
+  .hero-ring {
+    position: absolute;
+    width: 820px; height: 820px;
+    border-radius: 50%;
+    border: 1px solid rgba(198,163,92,.18);
+    right: -180px; top: -190px;
+    pointer-events: none;
+  }
+  .hero-ring.r2 { inset: auto; right: -120px; top: -130px; width: 700px; height: 700px; border-style: dashed; border-color: rgba(198,163,92,.22); }
+  .hero-ring.r3 { right: -260px; top: -260px; width: 980px; height: 980px; border-color: rgba(198,163,92,.10); }
+  .hero-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 72px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .hero .script-line { font-family: var(--font-script); font-size: clamp(30px, 3.4vw, 44px); color: var(--gold-bright); }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(52px, 6.6vw, 92px);
+    line-height: 1.02;
+    letter-spacing: 0.015em;
+    margin: 14px 0 26px;
+  }
+  .hero h1 em { font-style: italic; }
+  .hero p.lede { max-width: 480px; font-size: 19.5px; color: rgba(250,244,232,.78); }
+  .hero-ctas { display: flex; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
+  .hero-meta { display: flex; gap: 36px; margin-top: 56px; flex-wrap: wrap; }
+  .hero-meta .m { display: grid; gap: 2px; }
+  .hero-meta .m b { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--gold-bright); letter-spacing: .02em; }
+  .hero-meta .m span { font-size: 11.5px; letter-spacing: .3em; text-transform: uppercase; color: rgba(250,244,232,.55); }
+
+  .hero-visual { position: relative; }
+  .hero-visual .arch-frame { max-width: 420px; margin-left: auto; }
+  .hero-visual .arch-img { aspect-ratio: 4 / 5.4; }
+  .hero-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-badge {
+    position: absolute;
+    left: -8px; bottom: 42px;
+    background: var(--burgundy-ink);
+    border: 1px solid var(--gold);
+    padding: 18px 26px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow-soft);
+  }
+  .hero-badge .script { font-size: 26px; line-height: 1; }
+  .hero-badge small { display: block; font-size: 10.5px; letter-spacing: .3em; text-transform: uppercase; color: rgba(250,244,232,.6); margin-top: 4px; }
+
+  /* sparkle */
+  .spark { position: absolute; color: var(--gold); opacity: .8; }
+  @media (prefers-reduced-motion: no-preference) {
+    .spark { animation: twinkle 3.6s ease-in-out infinite; }
+    .spark.s2 { animation-delay: 1.2s; }
+    .spark.s3 { animation-delay: 2.2s; }
+    @keyframes twinkle { 0%,100% { opacity:.15; transform: scale(.7);} 50% { opacity:.9; transform: scale(1);} }
+  }
+
+  /* ===== gold ticker ===== */
+  .ticker {
+    background: var(--gold-grad);
+    color: var(--burgundy-ink);
+    overflow: hidden;
+    border-top: 1px solid rgba(255,240,200,.7);
+    border-bottom: 1px solid rgba(110,80,30,.45);
+    padding: 16px 0;
+  }
+  .ticker-track { display: flex; gap: 0; white-space: nowrap; width: max-content; }
+  .ticker span {
+    font-size: 13.5px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .ticker-track { animation: tick 36s linear infinite; }
+    @keyframes tick { to { transform: translateX(-50%); } }
+  }
+
+  /* ===== intro ===== */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .intro-grid .arch-frame { max-width: 400px; }
+  .intro-grid .arch-img { aspect-ratio: 4/5; }
+  .intro-copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.2vw, 54px);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--burgundy);
+    margin: 14px 0 22px;
+  }
+  .intro-copy p { color: var(--text-soft); font-size: 18.5px; max-width: 520px; }
+  .intro-copy p + p { margin-top: 16px; }
+  .intro-sign { margin-top: 30px; display: flex; align-items: baseline; gap: 18px; }
+  .intro-sign .script { font-size: 38px; color: var(--burgundy); }
+  .intro-sign small { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-dim); }
+
+  /* ===== services preview ===== */
+  .svc-section { position: relative; overflow: hidden; }
+  .svc-section::before, .svc-section::after {
+    content: "";
+    position: absolute;
+    width: 560px; height: 560px;
+    border-radius: 50%;
+    border: 1px dashed rgba(198,163,92,.35);
+    pointer-events: none;
+  }
+  .svc-section::before { left: -280px; top: -180px; box-shadow: 0 0 0 40px rgba(198,163,92,.06); }
+  .svc-section::after { right: -280px; bottom: -180px; box-shadow: 0 0 0 40px rgba(198,163,92,.06); }
+  .svc-watermark {
+    position: absolute;
+    left: 50%; top: 38px;
+    transform: translateX(-50%);
+    font-family: var(--font-script);
+    font-size: clamp(110px, 16vw, 210px);
+    color: rgba(198,163,92,.10);
+    white-space: nowrap;
+    pointer-events: none;
+    line-height: 1;
+  }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    position: relative;
+  }
+  .svc-card {
+    display: block;
+    background: var(--ivory);
+    border: 1px solid rgba(198,163,92,.45);
+    padding: 16px 16px 34px;
+    text-align: center;
+    position: relative;
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+  }
+  /* gold filigree corners */
+  .svc-card::before, .svc-card::after {
+    content: "";
+    position: absolute;
+    width: 26px; height: 26px;
+    pointer-events: none;
+    transition: width .4s var(--ease), height .4s var(--ease);
+  }
+  .svc-card::before { top: 7px; left: 7px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+  .svc-card::after { bottom: 7px; right: 7px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+  .svc-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-soft); border-color: var(--gold); }
+  .svc-card:hover::before, .svc-card:hover::after { width: 44px; height: 44px; }
+  .svc-art { position: relative; margin-bottom: 36px; }
+  .svc-card .arch-img {
+    border-radius: 999px 999px 8px 8px;
+    overflow: hidden;
+    aspect-ratio: 4/4.6;
+    background: radial-gradient(120% 100% at 50% 0%, #5C1428 0%, var(--burgundy-deep) 75%);
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(198,163,92,.4);
+  }
+  .svc-card .arch-img::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(250,244,232,.5);
+    border-radius: 999px 999px 4px 4px;
+    pointer-events: none;
+  }
+  .svc-card .arch-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease), filter .8s var(--ease); }
+  .svc-card:hover .arch-img img { transform: scale(1.07); filter: saturate(1.1); }
+  .svc-medal {
+    position: absolute;
+    left: 50%; bottom: -22px;
+    transform: translateX(-50%);
+    width: 46px; height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--gold-grad);
+    color: var(--burgundy-ink);
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 700;
+    box-shadow: 0 6px 18px -6px rgba(42,6,15,.45), 0 0 0 4px var(--ivory);
+    transition: transform .5s var(--ease);
+  }
+  .svc-card:hover .svc-medal { transform: translateX(-50%) rotate(360deg); }
+  .svc-card h3 { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--burgundy); }
+  .svc-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--gold-dim);
+    font-size: 10px;
+    margin: 10px 0 12px;
+  }
+  .svc-rule::before, .svc-rule::after {
+    content: "";
+    height: 1px; width: 34px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .svc-rule::after { background: linear-gradient(90deg, var(--gold), transparent); }
+  .svc-card p { font-size: 16.5px; color: var(--text-soft); padding: 0 14px; }
+  .svc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 11.5px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gold-dim);
+    opacity: .55;
+    transition: opacity .4s var(--ease), color .4s var(--ease), gap .4s var(--ease);
+  }
+  .svc-card:hover .svc-link { opacity: 1; color: var(--burgundy); gap: 14px; }
+  .svc-more { text-align: center; margin-top: 60px; }
+
+  /* ===== why choose us ===== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(198,163,92,.25);
+    border: 1px solid rgba(198,163,92,.25);
+  }
+  .why-cell {
+    background: rgba(42,6,15,.55);
+    padding: 44px 36px;
+  }
+  .why-cell .wnum { font-family: var(--font-script); font-size: 34px; color: var(--gold); line-height: 1; }
+  .why-cell h3 { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin: 14px 0 10px; color: var(--cream); }
+  .why-cell p { font-size: 17px; color: rgba(250,244,232,.66); }
+
+  /* ===== testimonials ===== */
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .testi-card { padding: 44px 38px 38px; }
+  .testi-card .tquote { font-family: var(--font-display); font-size: 64px; line-height: .4; color: var(--gold); display: block; margin-bottom: 26px; }
+  .testi-card p { font-family: var(--font-display); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--text-dark); }
+  .testi-card .tname { margin-top: 26px; display: flex; align-items: center; gap: 12px; }
+  .testi-card .tname::before { content: ""; width: 30px; height: 1px; background: var(--gold); }
+  .testi-card .tname b { font-weight: 500; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--burgundy); }
+  .testi-card .tname span { font-size: 12.5px; color: var(--text-soft); letter-spacing: .06em; }
+  .testi-stars { color: var(--gold-dim); font-size: 13px; letter-spacing: 6px; margin-top: 6px; }
+
+  /* ===== CTA band ===== */
+  .cta-band { text-align: center; position: relative; overflow: hidden; }
+  .cta-band .script-line { font-family: var(--font-script); font-size: clamp(30px,3.4vw,42px); color: var(--gold-bright); }
+  .cta-band h2 { font-family: var(--font-display); font-size: clamp(38px, 5vw, 64px); font-weight: 500; color: var(--cream); margin: 12px 0 18px; }
+  .cta-band p { color: rgba(250,244,232,.72); font-size: 18px; max-width: 480px; margin: 0 auto 38px; }
+
+  @media (max-width: 1020px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 56px; }
+    .hero-visual .arch-frame { margin: 0 auto; }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+    .intro-grid { grid-template-columns: 1fr; gap: 56px; }
+    .intro-grid .arch-frame { margin: 0 auto; }
+  }
+  @media (max-width: 640px) {
+    .svc-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+    .hero { padding: 130px 22px 70px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span class="brand-name">Deepika Makeup Studio<small>Kanpur &middot; Makeup &amp; Nail Art</small></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-solid" href="contact.html">Book Now</a>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color: var(--gold-bright);">Book Now &rarr;</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" data-screen-label="Home — Hero">
+  <div class="hero-ring"></div>
+  <div class="hero-ring r2"></div>
+  <div class="hero-ring r3"></div>
+  <svg class="spark" style="top:22%; left:46%;" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"></path></svg>
+  <svg class="spark s2" style="top:64%; left:54%;" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"></path></svg>
+  <svg class="spark s3" style="top:14%; left:8%;" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"></path></svg>
+
+  <div class="hero-inner">
+    <div>
+      <div class="script-line">Beauty Beyond Expectations</div>
+      <h1>Where Every Face<br>Becomes a <em class="gold-text">Masterpiece</em></h1>
+      <p class="lede">Luxury bridal makeup, occasion glam and couture nail art in Kanpur — crafted with premium products and an artist's eye for detail.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="contact.html">Book Your Appointment</a>
+        <a class="btn" href="portfolio.html">View Portfolio</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m"><b>Certified</b><span>Geetanjali Academy</span></div>
+        <div class="m"><b>Bridal</b><span>Signature Service</span></div>
+        <div class="m"><b>Kanpur</b><span>Studio &amp; On-Location</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="arch-frame">
+        <div class="arch-img">
+          <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/videos/29575337/pexels-photo-29575337.jpeg?auto=compress&w=900" aria-label="Indian bride adjusting her bridal jewellery">
+            <source src="https://www.pexels.com/download/video/29575337/" type="video/mp4">
+          </video>
+          <img data-fallback class="hero-video-fallback" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=900&auto=format&fit=crop" alt="Indian bride in traditional attire" style="display:none;">
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div>
+          <span class="script">Bridal &middot; Glam &middot; Nails</span>
+          <small>By Appointment Only</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TICKER ===================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Bridal Makeup &#10038; Engagement Makeup &#10038; Party Makeup &#10038; HD Makeup &#10038; Airbrush Makeup &#10038; Nail Art &#10038; Press-On Nails &#10038; Hairstyling &#10038; Saree Draping &#10038;</span>
+    <span>Bridal Makeup &#10038; Engagement Makeup &#10038; Party Makeup &#10038; HD Makeup &#10038; Airbrush Makeup &#10038; Nail Art &#10038; Press-On Nails &#10038; Hairstyling &#10038; Saree Draping &#10038;</span>
+  </div>
+</div>
+
+<!-- ===================== INTRO ===================== -->
+<section class="section" data-screen-label="Home — Intro">
+  <div class="section-inner intro-grid">
+    <div class="arch-frame reveal">
+      <div class="arch-img">
+        <img data-fallback src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=900&auto=format&fit=crop" alt="Flawless makeup portrait">
+      </div>
+    </div>
+    <div class="intro-copy reveal">
+      <h2>Enhancing Your <em class="gold-text">Natural Beauty</em></h2>
+      <p>At Deepika Makeup Studio, we believe every woman deserves to look and feel beautiful. We offer professional makeup artistry for weddings, engagements, parties, receptions, photoshoots and every special occasion.</p>
+      <p>Our mission is simple — elegant, flawless, confidence-boosting looks that make every client feel extraordinary on her most important day.</p>
+      <div class="intro-sign">
+        <span class="script">Deepika Singh</span>
+        <small>Founder &amp; Makeup Artist</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES PREVIEW ===================== -->
+<section class="section svc-section" style="background: var(--cream-warm); border-top: 1px solid rgba(198,163,92,.3); border-bottom: 1px solid rgba(198,163,92,.3);" data-screen-label="Home — Services">
+  <div class="svc-watermark" aria-hidden="true">Signature</div>
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <h2>The Art of <em class="gold-text">Transformation</em></h2>
+      <p>Four crafts, one promise — you leave the studio looking like the finest version of yourself.</p>
+      <div class="orn-divider">
+        <svg width="34" height="14" viewBox="0 0 34 14" fill="currentColor"><path d="M17 0l3 7-3 7-3-7zM4 5l2 2-2 2-2-2zM30 5l2 2-2 2-2-2z"></path></svg>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <a class="svc-card reveal" href="services.html">
+        <div class="svc-art">
+          <div class="arch-img"><img data-fallback src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=600&auto=format&fit=crop" alt="Bridal makeup"></div>
+          <span class="svc-medal">01</span>
+        </div>
+        <h3>Bridal Makeup</h3>
+        <div class="svc-rule">&#10038;</div>
+        <p>Your dream bridal look — HD &amp; airbrush perfection that lasts from vidaai to reception.</p>
+        <span class="svc-link">Discover &rarr;</span>
+      </a>
+      <a class="svc-card reveal" href="services.html">
+        <div class="svc-art">
+          <div class="arch-img"><img data-fallback src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=600&auto=format&fit=crop" alt="Party and engagement glam"></div>
+          <span class="svc-medal">02</span>
+        </div>
+        <h3>Occasion Glam</h3>
+        <div class="svc-rule">&#10038;</div>
+        <p>Engagement, party and reception looks tailored to your outfit, jewellery and mood.</p>
+        <span class="svc-link">Discover &rarr;</span>
+      </a>
+      <a class="svc-card reveal" href="services.html">
+        <div class="svc-art">
+          <div class="arch-img"><img data-fallback src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop" alt="Nail art"></div>
+          <span class="svc-medal">03</span>
+        </div>
+        <h3>Nail Art &amp; Press-Ons</h3>
+        <div class="svc-rule">&#10038;</div>
+        <p>Couture nails — hand-painted art, chrome, French and ready-to-wear press-on sets.</p>
+        <span class="svc-link">Discover &rarr;</span>
+      </a>
+      <a class="svc-card reveal" href="services.html">
+        <div class="svc-art">
+          <div class="arch-img"><img data-fallback src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=600&auto=format&fit=crop" alt="Hairstyling"></div>
+          <span class="svc-medal">04</span>
+        </div>
+        <h3>Hair &amp; Draping</h3>
+        <div class="svc-rule">&#10038;</div>
+        <p>Elegant hairstyling and graceful saree draping to complete the picture.</p>
+        <span class="svc-link">Discover &rarr;</span>
+      </a>
+    </div>
+    <div class="svc-more reveal">
+      <a class="btn btn-dark" href="services.html">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="section dark" data-screen-label="Home — Why Choose Us">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <h2>Crafted with Care,<br>Finished with <em class="gold-text">Gold</em></h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-cell">
+        <div class="wnum">01</div>
+        <h3>Professional &amp; Hygienic</h3>
+        <p>Sanitised tools, fresh applicators and salon-grade hygiene for every single client.</p>
+      </div>
+      <div class="why-cell">
+        <div class="wnum">02</div>
+        <h3>Premium Products</h3>
+        <p>Only trusted, premium makeup brands touch your skin — long-wearing and camera-ready.</p>
+      </div>
+      <div class="why-cell">
+        <div class="wnum">03</div>
+        <h3>Customised Looks</h3>
+        <p>No two faces are alike. Every look is designed around your features, outfit and occasion.</p>
+      </div>
+      <div class="why-cell">
+        <div class="wnum">04</div>
+        <h3>Affordable Packages</h3>
+        <p>Luxury that fits your budget — flexible packages for brides, families and parties.</p>
+      </div>
+      <div class="why-cell">
+        <div class="wnum">05</div>
+        <h3>Certified Artist</h3>
+        <p>Trained at Geetanjali Academy with hands-on experience in bridal and occasion makeup.</p>
+      </div>
+      <div class="why-cell">
+        <div class="wnum">06</div>
+        <h3>On-Location Service</h3>
+        <p>At the studio or at your venue — we travel across Kanpur for your big day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section" data-screen-label="Home — Testimonials">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <h2>Loved by <em class="gold-text">Brides</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card card-cream reveal">
+        <span class="tquote">&ldquo;</span>
+        <p>My bridal makeup stayed flawless from the haldi morning to the last photo at night. I felt like the most beautiful version of myself.</p>
+        <div class="tname"><b>Bride</b><span>Wedding Makeup</span></div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      </div>
+      <div class="testi-card card-cream reveal">
+        <span class="tquote">&ldquo;</span>
+        <p>The nail art was a piece of jewellery in itself — everyone at the engagement kept asking where I got it done.</p>
+        <div class="tname"><b>Client</b><span>Nail Art</span></div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      </div>
+      <div class="testi-card card-cream reveal">
+        <span class="tquote">&ldquo;</span>
+        <p>Deepika understood exactly the look I wanted for my reception — elegant, never overdone. Truly an artist.</p>
+        <div class="tname"><b>Client</b><span>Reception Glam</span></div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="section dark cta-band" data-screen-label="Home — CTA">
+  <div class="section-inner">
+    <div class="script-line reveal">Your dream look, our expertise</div>
+    <h2 class="reveal">Book Your Appointment</h2>
+    <p class="reveal">Let us make your special moments even more beautiful. Dates fill quickly in wedding season — reserve yours today.</p>
+    <div class="reveal" style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-solid" href="contact.html">Book Now</a>
+      <a class="btn" href="contact.html">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">D</span>
+        <span class="brand-name">Deepika Makeup Studio<small>Beauty Beyond Expectations</small></span>
+      </a>
+      <p>Luxury makeup artistry and couture nail art for weddings, engagements and every occasion worth remembering.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Bridal Makeup</a></li>
+        <li><a href="services.html">Engagement &amp; Party</a></li>
+        <li><a href="services.html">Nail Art &amp; Press-Ons</a></li>
+        <li><a href="services.html">Hair &amp; Saree Draping</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <ul>
+        <li><a href="contact.html">Kanpur, Uttar Pradesh</a></li>
+        <li><a href="mailto:deepika.singh12061988@gmail.com">deepika.singh12061988@gmail.com</a></li>
+        <li><a href="contact.html">By appointment only</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Deepika Makeup Studio &middot; Kanpur</span>
+    <span style="color: var(--gold-dim);">Beauty Beyond Expectations</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="contact.html" aria-label="Book on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.5-.6c.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.4z"></path></svg>
+</a>
+
+<script src="assets/site.js"></script>
+<script>
+  // hero video: respect reduced motion, fall back to photo if the stream fails
+  (function () {
+    var v = document.querySelector('.hero-video');
+    if (!v) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      v.removeAttribute('autoplay');
+      v.pause();
+    } else {
+      // autoplay can be ignored in some embedding contexts — kick playback explicitly
+      var kick = function () { if (v.paused) v.play().catch(function () {}); };
+      v.addEventListener('loadeddata', kick);
+      v.addEventListener('canplay', kick);
+      document.addEventListener('visibilitychange', kick);
+      new IntersectionObserver(function (entries, io) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { kick(); }
+      }, { threshold: 0.1 }).observe(v);
+      kick();
+    }
+    v.addEventListener('error', swap, true);
+    var src = v.querySelector('source');
+    if (src) src.addEventListener('error', swap);
+    function swap() {
+      var img = document.querySelector('.hero-video-fallback');
+      if (img) { img.style.display = 'block'; }
+      v.style.display = 'none';
+    }
+  })();
+</script>
+</body>
+</html>

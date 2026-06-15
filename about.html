@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Deepika Makeup Studio</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-grid .arch-frame { max-width: 400px; margin: 0 auto; }
+  .about-grid .arch-img { aspect-ratio: 4/5.2; }
+  .about-copy h2 { font-family: var(--font-display); font-size: clamp(34px,4.2vw,52px); font-weight: 500; color: var(--burgundy); line-height: 1.1; margin: 14px 0 20px; }
+  .about-copy p { color: var(--text-soft); font-size: 18.5px; max-width: 540px; }
+  .about-copy p + p { margin-top: 16px; }
+  .cred-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 44px;
+  }
+  .cred {
+    border: 1px solid rgba(198,163,92,.45);
+    padding: 22px 20px;
+    background: var(--ivory);
+  }
+  .cred b { font-family: var(--font-display); font-size: 21px; font-weight: 600; color: var(--burgundy); display: block; }
+  .cred span { font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-dim); }
+
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .value-card { padding: 44px 36px; text-align: center; }
+  .value-card .vorn { color: var(--gold); margin-bottom: 20px; }
+  .value-card h3 { font-family: var(--font-display); font-size: 25px; font-weight: 600; color: var(--burgundy); margin-bottom: 10px; }
+  .value-card p { font-size: 17px; color: var(--text-soft); }
+
+  .journey { max-width: 720px; margin: 0 auto; }
+  .j-step { display: grid; grid-template-columns: 90px 1fr; gap: 30px; padding: 34px 0; position: relative; }
+  .j-step + .j-step { border-top: 1px solid rgba(198,163,92,.25); }
+  .j-step .jno { font-family: var(--font-script); font-size: 40px; color: var(--gold); line-height: 1; }
+  .j-step h3 { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--cream); margin-bottom: 8px; }
+  .j-step p { font-size: 17.5px; color: rgba(250,244,232,.68); }
+
+  @media (max-width: 960px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    .values-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+    .cred-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span class="brand-name">Deepika Makeup Studio<small>Kanpur &middot; Makeup &amp; Nail Art</small></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-solid" href="contact.html">Book Now</a>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html" class="active">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color: var(--gold-bright);">Book Now &rarr;</a>
+</nav>
+
+<section class="page-hero" data-screen-label="About — Hero">
+  <h1>Meet <em class="gold-text">Deepika</em></h1>
+  <p class="lede">Certified makeup artist, nail designer, and the heart behind every transformation at the studio.</p>
+  <div class="orn-divider">
+    <svg width="34" height="14" viewBox="0 0 34 14" fill="currentColor"><path d="M17 0l3 7-3 7-3-7zM4 5l2 2-2 2-2-2zM30 5l2 2-2 2-2-2z"></path></svg>
+  </div>
+</section>
+
+<section class="section" data-screen-label="About — Story">
+  <div class="section-inner about-grid">
+    <div class="arch-frame reveal">
+      <div class="arch-img">
+        <img data-fallback src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=900&auto=format&fit=crop" alt="Makeup artistry portrait">
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <h2>An Artist's Hands,<br>A Bride's <em class="gold-text">Trust</em></h2>
+      <p>Deepika Singh is a certified makeup artist trained at Geetanjali Academy, with two years of dedicated experience in bridal, engagement and party makeup across Kanpur.</p>
+      <p>She is passionate about creating flawless, personalised looks that enhance natural beauty and boost confidence for every special occasion. For Deepika, makeup is never a mask — it is a celebration of the woman wearing it.</p>
+      <p>Alongside makeup, she crafts couture nail art and custom press-on sets — because elegance should reach all the way to your fingertips.</p>
+      <div class="cred-strip">
+        <div class="cred"><b>Certified</b><span>Geetanjali Academy</span></div>
+        <div class="cred"><b>2+ Years</b><span>Bridal Experience</span></div>
+        <div class="cred"><b>Kanpur</b><span>Studio &amp; On-Location</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--cream-warm); border-top: 1px solid rgba(198,163,92,.3); border-bottom: 1px solid rgba(198,163,92,.3);" data-screen-label="About — Values">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <h2>Elegant. Flawless.<br><em class="gold-text">Confidence-Boosting.</em></h2>
+      <p>Three promises behind every look that leaves the studio.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card card-cream reveal">
+        <div class="vorn">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"></path></svg>
+        </div>
+        <h3>Elegance First</h3>
+        <p>Looks that feel timeless in photographs — refined, balanced, never overdone.</p>
+      </div>
+      <div class="value-card card-cream reveal">
+        <div class="vorn">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2 4 6 6 10 6-4 2-6 6-6 10-2-4-6-6-10-6 4-2 6-6 6-10z"></path></svg>
+        </div>
+        <h3>Flawless Finish</h3>
+        <p>Premium products, hygienic tools and techniques that hold from first ritual to last dance.</p>
+      </div>
+      <div class="value-card card-cream reveal">
+        <div class="vorn">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8-4.8-8-11a4.6 4.6 0 0 1 8-3.1A4.6 4.6 0 0 1 20 10c0 6.2-8 11-8 11z"></path></svg>
+        </div>
+        <h3>Confidence Always</h3>
+        <p>The real transformation is how you feel when you look in the mirror — special, seen, celebrated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-screen-label="About — Experience">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <h2>From Consultation<br>to <em class="gold-text">Celebration</em></h2>
+    </div>
+    <div class="journey">
+      <div class="j-step reveal">
+        <div class="jno">01</div>
+        <div>
+          <h3>Consultation</h3>
+          <p>We talk about your event, outfit, jewellery and the look you've dreamed of — and design it together.</p>
+        </div>
+      </div>
+      <div class="j-step reveal">
+        <div class="jno">02</div>
+        <div>
+          <h3>The Artistry</h3>
+          <p>On the day, premium products and unhurried craft — makeup, hair, nails and draping done with care.</p>
+        </div>
+      </div>
+      <div class="j-step reveal">
+        <div class="jno">03</div>
+        <div>
+          <h3>The Reveal</h3>
+          <p>You step out flawless, photo-ready and glowing with confidence — beauty beyond expectations.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 50px;" class="reveal">
+      <a class="btn btn-solid" href="contact.html">Begin Your Consultation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">D</span>
+        <span class="brand-name">Deepika Makeup Studio<small>Beauty Beyond Expectations</small></span>
+      </a>
+      <p>Luxury makeup artistry and couture nail art for weddings, engagements and every occasion worth remembering.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Bridal Makeup</a></li>
+        <li><a href="services.html">Engagement &amp; Party</a></li>
+        <li><a href="services.html">Nail Art &amp; Press-Ons</a></li>
+        <li><a href="services.html">Hair &amp; Saree Draping</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <ul>
+        <li><a href="contact.html">Kanpur, Uttar Pradesh</a></li>
+        <li><a href="mailto:deepika.singh12061988@gmail.com">deepika.singh12061988@gmail.com</a></li>
+        <li><a href="contact.html">By appointment only</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Deepika Makeup Studio &middot; Kanpur</span>
+    <span style="color: var(--gold-dim);">Beauty Beyond Expectations</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="contact.html" aria-label="Book on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.5-.6c.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.4z"></path></svg>
+</a>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
