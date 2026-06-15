@@ -296,6 +296,10 @@
     .hero h1 { font-size: clamp(38px, 11vw, 64px); }
     .hero p.lede { font-size: 17.5px; }
     .hero-badge { left: 0; }
+    /* keep both hero buttons on one row */
+    .hero-ctas { gap: 12px; flex-wrap: nowrap; }
+    .hero-ctas .btn { flex: 1 1 0; padding: 13px 6px; font-size: 10px; letter-spacing: .05em; white-space: nowrap; }
+    .hero-ctas .btn::after { inset: 3px; }
     /* services / testimonials / why-us become swipeable carousels (see .m-carousel) */
     .svc-grid, .testi-grid, .why-grid { display: flex; }
     .why-grid { background: transparent; border: 0; }
