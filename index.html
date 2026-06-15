@@ -292,8 +292,16 @@
     .intro-grid .arch-frame { margin: 0 auto; }
   }
   @media (max-width: 640px) {
-    .svc-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
     .hero { padding: 130px 22px 70px; }
+    .hero h1 { font-size: clamp(38px, 11vw, 64px); }
+    .hero p.lede { font-size: 17.5px; }
+    .hero-badge { left: 0; }
+    /* services / testimonials / why-us become swipeable carousels (see .m-carousel) */
+    .svc-grid, .testi-grid, .why-grid { display: flex; }
+    .why-grid { background: transparent; border: 0; }
+    .svc-grid > .svc-card { flex: 0 0 84%; }
+    .testi-grid > .testi-card { flex: 0 0 86%; }
+    .why-grid > .why-cell { flex: 0 0 80%; border: 1px solid rgba(198,163,92,.3); }
   }
 </style>
 </head>
@@ -409,7 +417,7 @@
         <svg width="34" height="14" viewBox="0 0 34 14" fill="currentColor"><path d="M17 0l3 7-3 7-3-7zM4 5l2 2-2 2-2-2zM30 5l2 2-2 2-2-2z"></path></svg>
       </div>
     </div>
-    <div class="svc-grid">
+    <div class="svc-grid m-carousel">
       <a class="svc-card reveal" href="services.html">
         <div class="svc-art">
           <div class="arch-img"><img data-fallback src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=600&auto=format&fit=crop" alt="Bridal makeup"></div>
@@ -463,7 +471,7 @@
     <div class="section-head reveal">
       <h2>Crafted with Care,<br>Finished with <em class="gold-text">Gold</em></h2>
     </div>
-    <div class="why-grid reveal">
+    <div class="why-grid reveal m-carousel">
       <div class="why-cell">
         <div class="wnum">01</div>
         <h3>Professional &amp; Hygienic</h3>
@@ -504,7 +512,7 @@
     <div class="section-head reveal">
       <h2>Loved by <em class="gold-text">Brides</em></h2>
     </div>
-    <div class="testi-grid">
+    <div class="testi-grid m-carousel">
       <div class="testi-card card-cream reveal">
         <span class="tquote">&ldquo;</span>
         <p>My bridal makeup stayed flawless from the haldi morning to the last photo at night. I felt like the most beautiful version of myself.</p>

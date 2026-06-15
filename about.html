@@ -49,6 +49,11 @@
     .values-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
     .cred-strip { grid-template-columns: 1fr; }
   }
+  @media (max-width: 640px) {
+    /* values become a swipeable carousel (see .m-carousel) */
+    .values-grid { display: flex; max-width: none; margin: 0 -22px; }
+    .values-grid > .value-card { flex: 0 0 84%; }
+  }
 </style>
 </head>
 <body>
@@ -116,7 +121,7 @@
       <h2>Elegant. Flawless.<br><em class="gold-text">Confidence-Boosting.</em></h2>
       <p>Three promises behind every look that leaves the studio.</p>
     </div>
-    <div class="values-grid">
+    <div class="values-grid m-carousel">
       <div class="value-card card-cream reveal">
         <div class="vorn">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"></path></svg>

@@ -67,7 +67,9 @@
   .insta-band p { color: rgba(250,244,232,.7); font-size: 18px; max-width: 460px; margin: 0 auto 34px; }
 
   @media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
-  @media (max-width: 560px) { .gallery { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; } }
+  /* keep 2 columns on phones so the gallery doesn't stretch into one long strip */
+  @media (max-width: 560px) { .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+  @media (max-width: 360px) { .gallery { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; } }
 </style>
 </head>
 <body>
